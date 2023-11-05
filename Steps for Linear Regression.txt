@@ -1,0 +1,26 @@
+Steps for Linear Regression:
+1. *Create the dataframe properly-->pd.read_csv(),pd.read_excel()
+2. *Preprocessing the data:
+a. Feature selection-->domain knowledge,drop()
+b. Handling missing values-->isnull().sum(),fillna(),dropna()
+3. Assumption 1: There should be no outliers in the data-->boxplot()
+4. *Assumption 2: Assumption of Linearity:Every ind var should have a linear relationship with the dep var-->pairplot(), drop()
+5. *Create X and Y-->X=ind var, Y=dep var
+6. Assumption 3: Assumption of Normality: The dependent variable should follow an approximate normal distribtion-->distplot(),log()
+7. Checking and handling the skewness in the X vars-->skew(),hist(),log1p()
+8. Assumption 4: Assumption of no multicollinearity: There should be no multicollinearity between the independent variables-->corr(),heatmap(),vif(),drop()
+9. *Splitting the data into train and test(validation)-->train_test_split()
+10. *Building the model:
+a. Create the model-->obj=AlgoName()
+b. Train the model-->obj.fit(X_train, Y_train)
+c. Predict using the model-->Y_pred=obj.predict(X_test)
+11. *Evaluating the model:
+R-squared, Adj R-squared, RMSE, AIC/BIC
+12. Assumption 5: There should be no auto-correlation in the data-->Durbin Watson test
+13. Assumption 6: Errors should be random-->Fitted v/s Residual plot
+14. Assumption 7: Errors should follow an approx normal distribution-->Normal QQ plot
+15. Assumption 8: Errors should should follow a constant variance(Homoskedasticity)-->Scale Location plot
+16. *Tuning the model:
+a. Feature selection-->p-values,domain knowledge
+b. Regularization techniques-->Ridge(), Lasso()
+c. Stochastic Gradient Descent-->SGDRegressor()
